@@ -6,6 +6,16 @@ class App {
      * Class constructor.
      */
     public function __construct() {
-        print_r($_GET);
+        $url = $this->urlSplit();
+
+        show($url);
+       
+    }
+
+    /**
+     * function create array 
+     */
+    private function urlSplit(){
+        return explode("/", trim($_GET["url"],"/"));
     }
 }
