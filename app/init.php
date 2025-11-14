@@ -1,4 +1,4 @@
 <?php
 
-require "core/functions.php";
-require "core/app.php";
+require "../app/core/functions.php";
+require "../app/core/app.php";
