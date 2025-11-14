@@ -3,6 +3,7 @@
 class App {
 
     private $controller = "home";
+
     private $method = "index";
 
     private $param = [];
@@ -33,14 +34,16 @@ class App {
         }
 
         //ostatne casti url adresy ulozim do pola
+        $this->param = array_values($url);
 
-       
+        call_user_func_array([$this->controller, $this->method],$this->param);
+
     }
 
     /**
      * function create array 
      */
     private function urlSplit(){
-        return explode("/", trim($_GET["url"],"/"));
+        return explode("/", filter_var(trim($_GET["url"],"/"), FILTER_SANITIZE_URL));
     }
 }
