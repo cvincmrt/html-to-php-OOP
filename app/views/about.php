@@ -1,0 +1,1 @@
+Toto je view pre stranku about
