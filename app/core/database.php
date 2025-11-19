@@ -9,7 +9,7 @@ class Database {
             return $db;
         }catch(PDOException $e){
            //chyba pri pripajani k databaze
-           die(echo "Chyba databazy: ".$e->getMessage());
+           die("Chyba databazy: ".$e->getMessage());
         }
     }
 
@@ -24,7 +24,7 @@ class Database {
             $stmt->execute($params);
             
             return $stmt->fetchAll(POD::FETCH_OBJ);
-            
+
         } catch (PODException $e) {
             
             //chyba pri select dotaze
