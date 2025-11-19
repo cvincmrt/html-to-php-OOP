@@ -1,9 +1,9 @@
 <?php 
-class Home extends Controller{
+class About extends Controller{
 
     public function index(){
         
-        $this->view("home");
+        $this->view("about");
         //echo "ahoj si v klase home a pouzil si metodu index";
     }
 }

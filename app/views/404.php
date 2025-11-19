@@ -1,0 +1,1 @@
+Toto je chybova stranka 404 

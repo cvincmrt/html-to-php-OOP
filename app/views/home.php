@@ -1,0 +1,1 @@
+toto je view pre home page
