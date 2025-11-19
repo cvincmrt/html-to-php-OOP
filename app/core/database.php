@@ -3,7 +3,7 @@ class Database {
 
     public function connectDb(){
         try{
-            $string = "mysql:host = localhost; dbname = db_web";
+            $string = "mysql:host=localhost;dbname=minima_db";
             $db = new PDO($string, "root", "");
 
             return $db;
@@ -23,9 +23,9 @@ class Database {
             //spustenie dotazu
             $stmt->execute($params);
             
-            return $stmt->fetchAll(POD::FETCH_OBJ);
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
 
-        } catch (PODException $e) {
+        } catch (PDOException $e) {
             
             //chyba pri select dotaze
             echo "DB Read error: ".$e->getMessage();

@@ -1,1 +1,1 @@
-toto je view pre home page
+toto je home page

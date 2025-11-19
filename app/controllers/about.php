@@ -2,8 +2,10 @@
 class About extends Controller{
 
     public function index(){
+
+        $data["page_title"] = "About";
         
         $this->view("about");
-        //echo "ahoj si v klase home a pouzil si metodu index";
+      
     }
 }
