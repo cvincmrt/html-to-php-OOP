@@ -8,11 +8,43 @@ class Database {
 
             return $db;
         }catch(PDOException $e){
-            echo "Error: ".$e->getMessage();
+           //chyba pri pripajani k databaze
+           die(echo "Chyba databazy: ".$e->getMessage());
         }
     }
 
-    
+
+    // read vyber udajov SELECT
+    public function read($query, $params = []){
+        try {
+            $DB = $this->connectDb();
+            $stmt = $DB->prepare($query);
+
+            //spustenie dotazu
+            $stmt->execute($params);
+            
+            return $stmt->fetchAll(POD::FETCH_OBJ);
+            
+        } catch (PODException $e) {
+            
+            //chyba pri select dotaze
+            echo "DB Read error: ".$e->getMessage();
+
+            return false;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
 
 
 }
