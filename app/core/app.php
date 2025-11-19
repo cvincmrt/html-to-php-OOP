@@ -44,6 +44,7 @@ class App {
      * function create array 
      */
     private function urlSplit(){
-        return explode("/", filter_var(trim($_GET["url"],"/"), FILTER_SANITIZE_URL));
+        $url = isset($_GET["url"]) ? $_GET["url"] : "home";
+        return explode("/", filter_var(trim($url,"/"), FILTER_SANITIZE_URL));
     }
 }
