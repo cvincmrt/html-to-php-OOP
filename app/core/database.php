@@ -32,19 +32,24 @@ class Database {
 
             return false;
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
 
+    public function write($query, $params = []){
+        try {
+            $DB = $this->connectDb();
+            $stmt = $DB->prepare($query);
 
+            //spustenie dotazu
+            $stmt->execute($params);
+            
+            return $stmt;
+
+        } catch (PDOException $e) {
+            
+            //chyba pri select dotaze
+            echo "DB Read error: ".$e->getMessage();
+
+            return false;
+        }
+    }
 }
